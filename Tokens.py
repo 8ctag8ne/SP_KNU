@@ -13,7 +13,6 @@ class TokenType(Enum):
     ERROR = 'ERROR'
     WHITESPACE = 'WHITESPACE'
 
-
 class Token:
     def __init__(self, type, value):
         self.type = type

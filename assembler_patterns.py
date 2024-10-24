@@ -70,14 +70,15 @@ ASSEMBLER_PATTERNS = [
     (r'-?\d+\.\d+', TokenType.NUMBER),  # десяткові дроби (1.23)
 
     # Цілі числа
-    (r'\b[0-9][0-9A-Fa-f]*h\b', TokenType.NUMBER),  # шістнадцяткові
+    (r'\b[0-9][0-9A-Fa-f]*[Hh]\b', TokenType.NUMBER),  # шістнадцяткові з H/h в кінці
+    (r'\b[0-9]+[0-9A-Fa-f]*F\b', TokenType.NUMBER),  # шістнадцяткові з F в кінці
     (r'\b0x[0-9A-Fa-f]+\b', TokenType.NUMBER),  # шістнадцяткові (0x...)
     (r'\b[0-9]+d?\b', TokenType.NUMBER),  # десяткові
     (r'\b[01]+b\b', TokenType.NUMBER),  # двійкові
     (r'\b[0-7]+[oOqQ]\b', TokenType.NUMBER),  # вісімкові
 
     # Оператори
-    (r'[\+\-\*\/\[\]\(\),\:]', TokenType.OPERATOR),
+    (r'[\+\-\*\/\[\]\(\),\:,\=]', TokenType.OPERATOR),
 
     # Спеціальні символи
     (r'[\$\?\@\#\&\|\^\%\!]', TokenType.OPERATOR),
